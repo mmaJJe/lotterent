@@ -1,0 +1,138 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">
+    <title>Lotte Rental</title>
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        #btn button {
+            color: white;
+            background-color: #ef2a23;
+            font-size: 13pt;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <section id="header-top">
+            <section class="container">
+                <section class="logo">
+                    <h1><a href="{% url 'home' %}">Lotte Rental</a></h1>
+                </section>
+                <section id="etc">
+                    {%if request.session.user%}
+                    <article class="mypage">
+                        <a href="{% url 'mypage' %}">마이 페이지</a>
+                    </article>
+                    <article class="logout">
+                        <a href="{% url 'logout' %}">로그아웃</a>
+                    </article>
+                    {% else%}
+                    <article class="login">
+                        <a href="{% url 'login' %}">로그인</a>
+                    </article>
+                    <article class="signup">
+                        <a href="{% url 'signup' %}">회원가입</a>
+                    </article>
+                    {% endif %}
+                    
+                </section>
+            </section>
+            <!-- container end -->
+        </section>
+        <!-- header-top end -->
+        <section id="header-bottom">
+            
+        </section>
+        <!-- header-bottom end -->
+    </header>
+    <!-- header end -->
+    <div class="container" style="height: 80vh;">
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-12">
+                <br><br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="{% static 'img/큰수비드.jpg' %}"
+                                class="card-img-top" alt="커피머신 메인사진"
+                                style="width: 500px; height: 500px; border: 1px solid gainsboro;">
+                        </div>
+                        <div class="col-6">
+                            <h7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;브랜드 <i class="fas fa-angle-right"></i></h7>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <i class="far fa-heart"></i>&nbsp;&nbsp;&nbsp;
+                            <i class="far fa-share-square"></i>
+                            <br><br>
+                            <h2>&nbsp;&nbsp;&nbsp;반자동 커피머신 블랙</h2>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <i class="fas fa-star" style="color: goldenrod;"></i>
+                            <i class="fas fa-star" style="color: goldenrod;"></i>
+                            <i class="fas fa-star" style="color: goldenrod;"></i>
+                            <i class="fas fa-star" style="color: goldenrod;"></i>
+                            <i class="fas fa-star-half-alt" style="color: goldenrod;"></i>
+                            <h7>&nbsp;4.5 &nbsp;&nbsp;508건 &nbsp;&nbsp;&nbsp;&nbsp;월간대여 789건</h7>
+                            <hr style="border: 1px solid black;"><br>
+                            <h3>&nbsp;&nbsp;&nbsp;&nbsp;월대여료 &nbsp; 25,000원</h3>
+                            <br>
+                            <h6 style="color: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;모델명
+                                &nbsp;&nbsp;&nbsp;ECF01BLKR</h6>
+                            <h6 style="color: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;제조사
+                                &nbsp;&nbsp;&nbsp;SMEG S.p.A.</h6>
+                            <h6 style="color: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;원산지
+                                &nbsp;&nbsp;&nbsp;Assembled in China, Designed by SMEG ITALY</h6>
+                            <h6 style="color: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;색상
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;실버</h6>
+                            <h6 style="color: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;사이즈
+                                &nbsp;&nbsp;&nbsp;149x330x303mm (WxDxH)</h6>
+                            <h6 style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;배송비
+                                &nbsp;&nbsp;&nbsp;택배배송 (무료)</h6>
+                            <hr>
+                            <h6 style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;대여수량
+                                &nbsp;&nbsp;&nbsp;
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" style="width: 100px;">
+                                    <option value="1" selected>1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25,000원
+                            </h6>
+                            <br>
+                            <div id="btn">
+                                <a href="{% url 'rentbtn'%}" class="btn btn-outline-secondary my-2 my-sm-0">
+                                    <button type="button" class="btn btn-primary btn-lg btn-block btn-warning" style="border-radius: 30px; width:530px; height: 50px;
+                                      ">대여하기</button>
+                                      </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+                
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

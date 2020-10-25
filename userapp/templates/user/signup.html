@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+    <title>회원가입</title>
+    <style>
+        #btn button {
+            color: white;
+            background-color: #ef2a23;
+            font-size: 13pt;
+        }
+
+        h2 {
+            font-family: sans-serif;
+        }
+
+        input{
+            border-radius: 5px;
+            font-size: 12pt;
+            font-weight: 500;
+            border: 1px solid rgb(238, 238, 238);
+            background-color: white;
+        }
+
+        #inputState {
+            border-radius: 5px;
+            font-size: 12pt;
+            font-weight: 500;
+            border: 1px solid rgb(238, 238, 238);
+            background-color: white;
+        }
+    </style>
+
+
+</head>
+
+<body style="height: 140vh; display: flex; align-items: center;">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-6">
+                <h3 style="color: #ef2a23;"><b>Lotte Rental</b></h3>
+                <h2>회원 가입</h2>
+                <br><br>
+                <form action="{% url 'signup' %}" method="POST">
+                    {%csrf_token%}
+                    <div class="form-group">
+                        <label for="validationServer01">이름</label>
+                        <input name="nickname" type="text" class="form-control" id="name" aria-describedby="nameHelp"
+                            placeholder="아이디을 입력해 주세요." style="width:530px; height: 48px; ">
+                    </div>
+                    {% if err1 %}
+                        <small class="form-text text-muted">{{err1}}</small>
+                    {% endif %}
+
+                    <div class="form-group">
+                        <label for="name">이름</label>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="이름을 입력해 주세요."
+                            style="width:530px; height: 48px; ">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">전화번호</label>
+                        <input name="phone" type="text" class="form-control" id="phone" placeholder="'-'생략하고 숫자만 입력" 
+                        style="width:530px; height: 48px; ">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">생일</label>
+                        <input name="phone" type="text" class="form-control" id="phone" placeholder="8자리 입력 ex)19981026" 
+                        style="width:530px; height: 48px; ">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">비밀번호</label>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="아래의 조합으로 입력해 주세요."
+                            style="width:530px; height: 48px; ">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password2">비밀번호 확인</label>
+                        <input type="password" name="password2" class="form-control" id="password2" placeholder="비밀번호를 다시 입력해 주세요."
+                            style="width:530px; height: 48px; ">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">주소</label>
+                        <input name="address" type="text" class="form-control" id="address" placeholder="도로명주소+상세주소"
+                        style="width:530px; height: 48px; ">
+                    </div>
+                    <br><br>
+
+                    <div id="btn">
+                        <button type="button" class="btn btn-primary btn-lg btn-block btn-warning"
+                            style="border-radius: 5px; width:530px; height: 50px;">가입완료</button>
+                    </div>
+
+                </form>
+
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+
+        <!-- bootstrap4 js관련 CDN 부분 -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

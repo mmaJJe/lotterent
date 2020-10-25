@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <link rel="stylesheet" href="{% static 'mypage/css/style.css' %}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+<body>
+    <header>
+        <section id="header-top">
+            <section class="container">
+                <section class="logo">
+                    <h1><a href="{% url 'home' %}">Lotte Rental</a></h1>
+                </section>
+                <section id="etc">
+
+                    {%if request.session.user%}
+                    <article class="mypage">
+                        <a href="{% url 'mypage' %}">마이 페이지</a>
+                    </article>
+                    <article class="logout">
+                        <a href="{% url 'logout' %}">로그아웃</a>
+                    </article>
+                    {% else%}
+                    <article class="login">
+                        <a href="{% url 'login' %}">로그인</a>
+                    </article>
+                    <article class="signup">
+                        <a href="{% url 'signup' %}">회원가입</a>
+                    </article>
+                    {% endif %}
+                </section>
+            </section>
+            <!-- container end -->
+        </section>
+        <section id="header-bottom">
+            
+        </section>
+    </header>
+    <!-- header end -->
+    <section id="main">
+            <div class="container">
+
+            
+            <section id="my-info">
+                <section class="review">
+                    <section class="up">
+                        <article class="info-title">작성 가능한 리뷰</article>
+                    </section>
+                    <section class="review-contents">
+                        <i class="far fa-file-alt"></i>
+                        <span>작성 가능한 리뷰가 없습니다.</span>
+                    </section>
+                </section>
+                <section class="like-prod">
+                    <section class="up">
+                        <article class="info-title">찜한 상품</article>
+                    </section>
+                    <section class="like-prod-contents">
+                        <i class="far fa-file-alt"></i>
+                        <span>찜한 상품이 없습니다.</span>
+                    </section>
+                </section>
+                <section class="like-store">
+                    <section class="up">
+                        <article class="info-title">찜한 스토어</article>
+                    </section>
+                    <section class="like-store-contents">
+                        <i class="far fa-file-alt"></i>
+                        <span>찜한 스토어가 없습니다</span>
+                    </section>
+                </section>
+            </section>
+        <!-- </section> -->
+    </div>
+        <!-- container end -->
+    </section>
+    <!-- main end -->
+    <footer>
+        <section class="container">
+            <section class="footer">
+                <ul>
+                    <li><a href="#">오류신고</a></li>
+                </ul>
+                <address>
+                    Copyright&copy;Lotte
+                </address>
+            </section>
+        </section>
+    </footer>
+    <!-- footer end -->
+</body>
+</html>

@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotte Rental</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+    <header>
+        <section id="header-top">
+            <section class="container">
+                <section class="logo">
+                    <h1><a href="{% url 'home' %}">Lotte Rental</a></h1>
+                </section>
+                <section id="etc">
+                    {%if request.session.user%}
+                    <article class="mypage">
+                        <a href="{% url 'mypage' %}">마이 페이지</a>
+                    </article>
+                    <article class="logout">
+                        <a href="{% url 'logout' %}">로그아웃</a>
+                    </article>
+                    {% else%}
+                    <article class="login">
+                        <a href="{% url 'login' %}">로그인</a>
+                    </article>
+                    <article class="signup">
+                        <a href="{% url 'signup' %}">회원가입</a>
+                    </article>
+                    {% endif %}
+                    
+                </section>
+            </section>
+            <!-- container end -->
+        </section>
+        <!-- header-top end -->
+        <section id="header-bottom">
+            
+        </section>
+        <!-- header-bottom end -->
+    </header>
+    <!-- header end -->
+    <section id="main">
+        <section class="container">
+            <section class="images">
+                <a href="{% url 'detail' %}">
+                    <img src="{% static 'img/큰수비드.jpg' %}" alt="수비드 머신">
+                    <div class="detail">
+                        <span class="name">수비드슈프림 터치 11L 수비드조리머신 메탈실버</span>
+                        <span class="price">1회 사용에 25,000원</span>
+                    </div>
+                </a>
+            </section>
+            <!-- images end -->
+        </section>
+        <!-- container end -->
+    </section>
+    <!-- main end -->
+    <footer>
+        <section class="container">
+            <section class="footer">
+                <ul>
+                    <li><a href="#">오류신고</a></li>
+                </ul>
+                <address>
+                    Copyright&copy;Lotte
+                </address>
+            </section>
+        </section>
+    </footer>
+    <script src="{% static 'js/main/Search.js' %}"></script>
+</body>
+
+</html>
